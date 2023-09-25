@@ -1,0 +1,17 @@
+<div id="sidebar" [style.left]="!sidebarSate.IsShow ? '-75px' : '0px'" [style.width]="!sidebarSate.IsShow ? '0px' : '75px'">
+    <div class="list-menu">
+        <ng-container>
+            <a class="menu-item" *ngFor="let menuItem of listMenu" routerLink="{{menuItem.Link}}"
+                routerLinkActive="active" (click)="onClickMenu(menuItem)">
+                <div class="item-icon" [style.background]="menuItem.Background">
+                    <mat-icon>{{menuItem.Icon}}</mat-icon>
+                </div>
+                <div class="item-name">{{menuItem.Name | uppercase}}</div>
+            </a>
+        </ng-container>
+
+        <div class="toggle-button" (click)="toggleSidebar()">
+            <mat-icon>{{matIcons.ArrowToggleLeft}}</mat-icon>
+        </div>
+    </div>
+</div>

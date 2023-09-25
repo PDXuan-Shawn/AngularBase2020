@@ -1,0 +1,21 @@
+<div>
+    <div class="popup-title">
+      <h2 class="primary">Add Brand</h2>
+    </div>
+    <div class="popup-content">
+      <form [formGroup]="addForm" (ngSubmit)="onSaveProduct()">
+        <!-- Tên Nhóm sản phẩm -->
+        <app-text-box class="one-row" [control]="addForm.get('BrandName')" inputType="text" label="Brand Name">
+        </app-text-box>
+  
+        <!-- Link ảnh  sp -->
+        <app-text-box class="one-row" [control]="addForm.get('ImageUrl')" inputType="text" label="ImageUrl">
+        </app-text-box>
+  
+        <div class="footer">
+          <button mat-raised-button type="button" class="cancel-btn" (click)="onCancel()">Cancel</button>
+          <button mat-raised-button type="submit" color="primary" class="save-btn" (click)="onSaveProduct()">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>

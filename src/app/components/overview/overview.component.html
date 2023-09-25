@@ -1,0 +1,43 @@
+<div class="wrap-brands">
+  <div class="wrap-button">
+      <app-file-upload (onUploadFinished)="onUploadFinished($event)"></app-file-upload>
+  </div>
+  <div class="wrap-table" style="height: ;">
+      <table mat-table [dataSource]="dataSource" matSort class="brand-table" *ngIf="listBanner?.length">
+
+          <!-- Name Column -->
+          <ng-container matColumnDef="FileName">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+              <td mat-cell *matCellDef="let element"> {{element.FileName}} </td>
+          </ng-container>
+
+          <!-- Name Column -->
+          <ng-container matColumnDef="FullPath">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header style="width: auto; max-width: 300px;"> Image
+              </th>
+              <td mat-cell *matCellDef="let element">
+                  <div style="padding: 8px;">
+                      <img class="brand-img" src="{{element.FullPath}}" alt="">
+                  </div>
+              </td>
+          </ng-container>
+
+          <ng-container matColumnDef="Options">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Options </th>
+              <td mat-cell *matCellDef="let element">
+                  <!-- <button mat-stroked-button color="primary" (click)="onEditItem(element)">
+                      <mat-icon>edit</mat-icon>
+                  </button> -->
+                  <button mat-stroked-button color="warn" (click)="onDeleteItem(element)" style="margin-left: 8px;">
+                      <mat-icon>delete_outline</mat-icon>
+                  </button>
+              </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+  </div>
+
+
+</div>

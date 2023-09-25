@@ -1,0 +1,16 @@
+:host {
+    .footer {
+        margin-top: 16px;
+        display: flex;
+        justify-content: flex-end;
+
+        .cancel-btn {
+            margin-right: 8px;
+        }
+    }
+
+    .one-row {
+        display: block;
+        margin-bottom: 8px;
+    }
+}

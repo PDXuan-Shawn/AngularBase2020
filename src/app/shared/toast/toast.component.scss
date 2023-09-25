@@ -1,0 +1,17 @@
+#global-toast {
+    position: fixed;
+    z-index: 10000;
+    right: 10px;
+    top: 75px;
+    width: auto !important;
+    min-width: 150px !important;
+
+    .wrap-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        > mat-icon {
+            cursor: pointer;
+        }
+    }
+}

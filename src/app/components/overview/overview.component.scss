@@ -1,0 +1,34 @@
+:host {
+    height: calc(100% - 65px);
+    width: 100%;
+    overflow: auto;
+    padding: 16px;
+    padding-left: 65px;
+    margin-top: 65px;
+    .brand-table {
+        width: 100%;
+    }
+
+    .wrap-brands {
+        .wrap-button {
+            margin-bottom: 24px;
+            display: flex;
+            justify-content: flex-end;
+            > button {
+                margin-left: 8px;
+            }
+        }
+        .brand-img {
+            height: 80px;
+            width: 80px;
+            object-fit: contain;
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    :host {
+        padding-left: 16px;
+        margin-top: 0px;
+    }
+}

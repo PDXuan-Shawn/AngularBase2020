@@ -1,0 +1,46 @@
+<div>
+  <div class="popup-title">
+    <h2 class="primary">Add Product</h2>
+  </div>
+  <div class="popup-content">
+    <form [formGroup]="addForm" (ngSubmit)="onSaveProduct()">
+      <!-- Tên sảm phẩm  -->
+      <app-text-box class="one-row" [control]="addForm.get('ProductName')" inputType="text" label="Product Name">
+      </app-text-box>
+
+      <!-- Giá -->
+      <app-text-box class="one-row" [control]="addForm.get('Price')" [controlType]="textBoxtype.CurrencyInput"
+        inputType="text" label="Price">
+      </app-text-box>
+
+      <!-- Link điều hướng sản phẩm  -->
+      <app-text-box class="one-row" [control]="addForm.get('ProductLink')" inputType="text" label="ProductLink">
+      </app-text-box>
+
+      <!-- Link ảnh  sp -->
+      <app-text-box class="one-row" [control]="addForm.get('ImageUrl')" inputType="text" label="ImageUrl">
+      </app-text-box>
+
+      <!-- Giảm giá -->
+      <app-text-box class="one-row" [control]="addForm.get('DisCount')" inputType="number" label="DisCount">
+      </app-text-box>
+
+      <!-- Mô tả  -->
+      <app-text-box [control]="addForm.get('Description')" [controlType]="textBoxtype.TextArea" label="Description">
+      </app-text-box>
+      <div class="field">
+        <mat-form-field appearance="outline">
+          <mat-label>Brand</mat-label>
+          <mat-select type="text" [formControl]="addForm.get('BrandID')">
+            <mat-option *ngFor="let brand of listBrand" [value]="brand.BrandID">{{brand.BrandName}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="footer">
+        <button mat-raised-button type="button" class="cancel-btn" (click)="onCancel()">Cancel</button>
+        <button mat-raised-button type="submit" color="primary" class="save-btn" (click)="onSaveProduct()">Save</button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,120 @@
+@import "/src/app/commons/scss/colors.scss";
+@import "/src/app/commons/scss/font-size.scss";
+:host {
+    $sb-border-active: #2f53ff;
+    #sidebar {
+        background-color: $white;
+        // width: 75px;
+        height: 100%;
+        position: relative;
+        border: 1px solid $border;
+        font-size: $common-size;
+        transition: left 0.15s ease-in-out;
+        color: $text-soft !important;
+        // list menu
+        .list-menu {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            .menu-item {
+                margin-bottom: 16px;
+                cursor: pointer;
+                position: relative;
+                text-decoration: none;
+                z-index: 2;
+                transition: transform 0.15s ease-out;
+                height: 42px;
+                width: 42px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                &.active {
+                    height: 42px;
+                    width: 42px;
+                    border: 2px solid $sb-border-active;
+                }
+                &:hover {
+                    transform: translate(0, -4px);
+                    box-shadow: 0 10px 14px 0 rgb(0 0 0 / 15%);
+                    .item-name {
+                        display: block;
+                    }
+                }
+                .item-icon {
+                    width: 36px;
+                    height: 36px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 50%;
+                    > mat-icon {
+                        height: 24px;
+                        width: 24px;
+                        color: $white;
+                    }
+                }
+                .item-name {
+                    position: absolute;
+                    display: none;
+                    left: 56px;
+                    font-weight: 500;
+                    top: 4px;
+                    color: $text-soft !important;
+                    background: $white;
+                    box-shadow: 0 10px 14px 0 rgb(0 0 0 / 15%);
+                    padding: 8px;
+                    border-radius: 3px;
+                    min-width: 50px;
+                    text-align: center;
+                    white-space: nowrap;
+                    transition: transform 0.15s ease-out;
+                }
+            }
+
+            // toggle button
+            .toggle-button {
+                position: absolute;
+                left: 73px;
+                height: 131px;
+                width: 32px;
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+                background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIxMzEiIHZpZXdCb3g9IjAgMCAzMiAxMzEiPgogICAgPHBhdGggZmlsbD0iI0ZGRiIgZmlsbC1ydWxlPSJldmVub2RkIiBzdHJva2U9IiNFNEU0RTQiIGQ9Ik0yMy43NzUgMTYuMzQxTC0uNSAxLjA5NnYxMjguODA4bDI0LjI3NS0xNS4yNDVjNC44MDctMy4wMiA3LjcyNS04LjI5NyA3LjcyNS0xMy45NzNWMzAuMzE0YzAtNS42NzYtMi45MTgtMTAuOTU0LTcuNzI1LTEzLjk3M3oiLz4KPC9zdmc+Cg==);
+                > mat-icon {
+                    font-weight: bold;
+                    color: #949494;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    :host {
+        margin-right: 0px;
+        margin-top: 65px;
+        #sidebar {
+            width: 100% !important;
+            .list-menu {
+                flex-direction: row;
+                .toggle-button {
+                    display: none;
+                }
+                .menu-item {
+                    margin: 8px 16px;
+                    &:hover {
+                        transform: translate(0, 0px);
+                        .item-name {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

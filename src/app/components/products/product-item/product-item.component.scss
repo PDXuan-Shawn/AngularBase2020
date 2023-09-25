@@ -1,0 +1,79 @@
+@import "../../../commons/scss/colors.scss";
+@import "../../../commons/scss/font-size.scss";
+
+:host {
+    .product-item {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        // height: 400px;
+        .wrap-image {
+            width: 100%;
+            // height: 50%;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            > img {
+                // width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            .overlay {
+                height: 100%;
+                width: 100%;
+                background-color: #8080800d;
+                position: absolute;
+                top: 0px;
+            }
+
+            .discount {
+                position: absolute;
+                background: #e55472;
+                top: 8px;
+                left: 8px;
+                width: 52px;
+                border-radius: 3px;
+                text-align: center;
+                color: white;
+                font-weight: 500;
+            }
+        }
+
+        .wrap-description {
+            padding: 16px;
+            flex-grow: 1;
+            text-align: center;
+            >div {
+                margin-bottom: 8px;
+            }
+            .content {
+                max-height: 100px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                color: gray;
+                font-style: italic;
+                text-align: left;
+            }
+            .price {
+                font-weight: 500;
+                margin-top: 4px;
+            }
+            .prod-name {
+                font-size: 14px;
+                font-weight: 400;
+                text-transform: uppercase;
+            }
+        }
+        .wrap-action {
+            padding: 8px;
+            border-top: 1px solid $border;
+            display: flex;
+            justify-content: flex-end;
+        }
+    }
+}

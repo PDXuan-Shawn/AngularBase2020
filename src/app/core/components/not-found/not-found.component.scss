@@ -1,0 +1,18 @@
+:host {
+    margin-top: 65px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .wrap-notfound {
+        max-height: 400px;
+        max-width: 400px;
+        overflow: hidden;
+        >img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+}

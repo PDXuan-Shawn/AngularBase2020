@@ -1,0 +1,13 @@
+<ngb-toast *ngFor="let toast of toastService.toasts" [class]="toast.classname" [autohide]="true" id="global-toast"
+    [delay]="toast.delay || 5000" (hidden)="toastService.remove(toast)">
+    <ng-template [ngIf]="isTemplate(toast)" [ngIfElse]="text">
+    </ng-template>
+    <ng-template #text>
+        <div class="wrap-content">
+            <div>{{ toast.textOrTpl }}</div>
+            <mat-icon class="pointer" aria-hidden="false" aria-label="Example home icon"
+            (click)="toastService.remove(toast)"
+            >clear</mat-icon>
+        </div>
+    </ng-template>
+</ngb-toast>

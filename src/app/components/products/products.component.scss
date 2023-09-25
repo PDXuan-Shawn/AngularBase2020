@@ -1,0 +1,71 @@
+:host {
+    // height: 100%;
+    width: 100%;
+    overflow: auto;
+    padding: 16px;
+    margin-top: 65px;
+    padding-left: 65px;
+    .wrap-products {
+        height: calc(100% - 16px);
+        display: flex;
+        flex-direction: column;
+        .wrap-header-product {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 16px 0px;
+            .wrap-action {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                > button {
+                    margin-left: 8px;
+                }
+            }
+        }
+        .wrap-list-prod {
+            flex-grow: 1;
+            .product-list {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                grid-auto-flow: row dense;
+                grid-gap: 1.9vw;
+                padding-bottom: 50px;
+                .one-product {
+                    box-sizing: border-box;
+                    animation: fadeIn 0.35s ease-in forwards;
+                    box-shadow: 0 2px 40px 0 rgb(0 0 0 / 7%);
+                    transition: box-shadow 0.3s ease-out, transform 0.3s ease-out, opacity 0.2s ease-out;
+                    transition-delay: 0.1s;
+                    border-radius: 4px;
+                    transform: translateZ(0);
+                    background-color: #fff;
+                    overflow: hidden;
+                    height: 100%;
+                }
+                .one-product:hover {
+                    opacity: 1 !important;
+                    box-shadow: rgb(45 45 45 / 5%) 0px 2px 2px, rgb(49 49 49 / 5%) 0px 4px 4px,
+                        rgb(42 42 42 / 5%) 0px 8px 8px, rgb(32 32 32 / 5%) 0px 16px 16px, rgb(49 49 49 / 5%) 0px 32px 32px,
+                        rgb(35 35 35 / 5%) 0px 64px 64px;
+                    transform: translate(0, -4px);
+                    z-index: 999;
+                }
+            }
+        }
+      
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    :host {
+        margin-top: 0px;
+        padding-left: 16px;
+        .pager-header {
+            display: none;
+        }
+        .wrap-action {
+            width: 100%;
+        }
+    }
+}

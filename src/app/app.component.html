@@ -1,0 +1,13 @@
+
+<app-toast></app-toast>
+<ngx-spinner>
+    <h3>Loading...</h3>
+</ngx-spinner>
+
+<ng-container *ngIf="!loading">
+    <app-navbar *ngIf="isLogin"></app-navbar>
+    <div id="content-container">
+        <app-sidebar *ngIf="isLogin"></app-sidebar>
+        <router-outlet></router-outlet>
+    </div>
+</ng-container>

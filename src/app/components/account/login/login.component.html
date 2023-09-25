@@ -1,0 +1,35 @@
+<div id="login-page">
+  <div class="container-login">
+    <div class="wrap-left">
+      <img src="../../../../assets/images/login.jpg" alt="">
+    </div>
+
+    <div class="wrap-right">
+      <form class="sign-in-form" [formGroup]="signInForm" autocomplete="off" (ngSubmit)="onSubmit()">
+        <h2>SIGN IN NOW</h2>
+        <div class="row-control">
+          <mat-form-field appearance="outline">
+            <mat-label>Username</mat-label>
+            <input matInput placeholder="Username" formControlName="username">
+          </mat-form-field>
+          <mat-error *ngIf="signInForm.get('username')?.errors?.required && signInForm.get('username')?.touched">Không được để trống</mat-error>
+        </div>
+
+        <div class="row-control">
+          <mat-form-field appearance="outline">
+            <mat-label>Password</mat-label>
+            <input type="password" matInput placeholder="Password" formControlName="password" [type]="hide ? 'password' : 'text'">
+            <div style="cursor: pointer;" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </div>
+          </mat-form-field>
+          <mat-error *ngIf="signInForm.get('password')?.errors && signInForm.get('password')?.touched">Không được để trống</mat-error>
+        </div>
+        <div class="row-control row-actions">
+          <button mat-raised-button color="primary" type="submit" style="width: 100%;">Sign in</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</div>

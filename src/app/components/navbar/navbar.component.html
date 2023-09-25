@@ -1,0 +1,22 @@
+<div id="navbar">
+  <div class="logo-wrap" >
+    <img src="../../../assets/images/Logo.png" style="max-height: 50px;" alt="logo" class="logo" routerLink="/">
+  </div>
+
+  <div class="d-flex align-items-center">
+    <ng-container *ngIf="currentUser$ | async">
+      <div ngbDropdown>
+        <!-- <strong>{{(currentUser$ | async).DisplayName}}</strong> -->
+        <div class="user-profile" ngbDropdownToggle>
+          <mat-icon aria-hidden="false" aria-label="Example home icon">person</mat-icon>
+          <div ngbDropdownMenu>
+            <button ngbDropdownItem (click)="showToast()">View Profile</button>
+            <button ngbDropdownItem (click)="logout()">Logout</button>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+
+  </div>
+
+</div>

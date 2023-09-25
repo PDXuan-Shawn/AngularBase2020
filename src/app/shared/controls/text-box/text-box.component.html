@@ -1,0 +1,42 @@
+<div class="field">
+    <mat-form-field appearance="outline">
+        <mat-label>{{label}}</mat-label>
+        <input matInput *ngIf="controlType === textBoxType.TextInput" [type]="inputType" [formControl]="control" />
+
+        <input matInput *ngIf="controlType == textBoxType.CurrencyInput" [type]="inputType" [formControl]="control" 
+        [currencyCode]="'VND'"
+        />
+
+        <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1"
+            cdkAutosizeMaxRows="5" *ngIf="controlType === textBoxType.TextArea" [formControl]="control">
+        </textarea>
+    </mat-form-field>
+
+
+    <!-- Validate  -->
+    <div *ngIf="showErrors()" class="err-text">
+        <p *ngIf="control.errors.required">
+            Value is required
+        </p>
+        <p *ngIf="control.errors.email">
+            Enter a valid email
+        </p>
+        <p *ngIf="control.errors.minlength">
+            Value you entered is
+            {{ control.errors.minlength.actualLength }}
+            characters long, but it must be at aleast
+            {{ control.errors.minlength.requiredLength }}
+            characters
+        </p>
+        <p *ngIf="control.errors.maxlength">
+            Value you entered is
+            {{ control.errors.maxlength.actualLength }}
+            characters long, but it cannot be longer than
+            {{ control.errors.maxlength.requiredLength }}
+            characters
+        </p>
+        <p *ngIf="control.errors.pattern">
+            Invalid format
+        </p>
+    </div>
+</div>

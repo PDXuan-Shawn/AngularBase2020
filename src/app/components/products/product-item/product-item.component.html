@@ -1,0 +1,19 @@
+<div class="product-item">
+    <div class="wrap-image">
+        <img src="{{product.ImageUrl}}" alt="{{product.ProductName}}" class="img-fluid bg-info">
+        <div class="overlay"></div>
+        <div class="discount">-{{product.DisCount}}%</div>
+    </div>
+    <div class="wrap-description">
+        <div class="price-wrap">
+            <div class="prod-name">{{product.ProductName}}</div>
+            <span class="price">{{product.Price | currency : "VND"}}</span>
+        </div>
+        <div class="content" >{{product.Description}}</div>
+    </div>
+    <div class="wrap-action">
+        <button mat-stroked-button color="primary" style="margin-right: 8px;" (click)="onEdit()">Edit</button>
+        <button mat-stroked-button color="warn" (click)="onDelete()">Delete</button>
+    </div>
+
+</div>

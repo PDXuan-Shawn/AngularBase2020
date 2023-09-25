@@ -1,0 +1,37 @@
+@import "../../commons/scss/colors.scss";
+
+#navbar {
+    height: 65px;
+    background: inherit;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    right: 0px;
+    left: 0px;
+    justify-content: space-between;
+    padding: 0px 16px;
+    top: 0;
+    bottom: 0;
+    z-index: 1000;
+    transition: background-color 0.3s;
+    background: #ffffff;
+    box-shadow: 0 1px 30px 0 rgb(145 145 145 / 20%);
+
+    .user-profile {
+        border-radius: 50%;
+        height: 40px;
+        border: 1px solid $border;
+        width: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+    .dropdown-toggle::after {
+        display: none;
+    }
+    .dropdown-menu {
+        margin-top: 4px;
+        border: 1px solid $border;
+    }
+}

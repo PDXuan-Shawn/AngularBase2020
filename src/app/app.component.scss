@@ -1,0 +1,19 @@
+$mobile-width: 480px;
+$tablet-width: 768px;
+$desktop-width: 1024px;
+
+:host {
+    display: block;
+    height: 100%;
+    width: 100%;
+    #content-container {
+        display: flex;
+        height: 100%;
+        background-color: #f9f9f9;
+    }
+}
+@media only screen and (max-width: 768px) {
+    #content-container {
+        flex-direction: column;
+    }
+}
